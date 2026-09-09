@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENEM+ | Estratégias de Prova</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0b1020;
+    color: #f5f7ff;
+    min-height: 100vh;
+}
+
+header {
+    height: 75px;
+    background: #11182d;
+    border-bottom: 1px solid #26304d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #6ea8ff;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #b8c0d9;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .2s;
+}
+
+nav button:hover {
+    color: white;
+}
+
+.hero {
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        radial-gradient(circle at 80% 20%, #19366e 0%, transparent 35%),
+        #0b1020;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 13px;
+    background: #172442;
+    border: 1px solid #2b4d86;
+    border-radius: 20px;
+    color: #72aaff;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #6ea8ff;
+}
+
+.hero p {
+    color: #aeb8d0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    border: none;
+    padding: 14px 22px;
+    border-radius: 10px;
+    background: #4d8cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #6aa0ff;
+}
+
+.hero-card {
+    width: 330px;
+    background: #121a30;
+    border: 1px solid #293758;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+
+.hero-card h3 {
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 9px;
+    background: #252e48;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress div {
+    width: 72%;
+    height: 100%;
+    background: #5e9aff;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #8994ae;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #121a30;
+    border: 1px solid #263453;
+    border-radius: 16px;
+    padding: 24px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #548fff;
+}
+
+.card .icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #919bb3;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.formula {
+    font-size: 22px;
+    color: #76aaff;
+    font-weight: bold;
+    margin: 18px 0;
+    background: #0c1325;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.example {
+    background: #19233b;
+    border-left: 4px solid #5893ff;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    line-height: 1.6;
+}
+
+.tip {
+    margin-top: 15px;
+    color: #aeb9d2;
+    line-height: 1.6;
+}
+
+.flow {
+    max-width: 700px;
+    margin: auto;
+}
+
+.step {
+    background: #121a30;
+    border: 1px solid #293755;
+    padding: 22px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    color: #5b94ff;
+    font-size: 22px;
+}
+
+.quiz-box {
+    max-width: 800px;
+    margin: auto;
+    background: #121a30;
+    border: 1px solid #293755;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.question {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.options {
+    display: grid;
+    gap: 12px;
+}
+
+.option {
+    padding: 15px;
+    background: #19233a;
+    border: 1px solid #30405f;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: .2s;
+}
+
+.option:hover {
+    background: #233251;
+}
+
+.option.correct {
+    background: #164d36;
+    border-color: #37c886;
+}
+
+.option.wrong {
+    background: #51242a;
+    border-color: #e85d6a;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    line-height: 1.5;
+}
+
+.timer-box {
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    background: #121a30;
+    border: 1px solid #293755;
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.timer {
+    font-size: 65px;
+    font-weight: bold;
+    color: #6fa7ff;
+    margin: 20px;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+footer {
+    border-top: 1px solid #252f49;
+    padding: 35px 8%;
+    color: #68748f;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    color: #6da5ff;
+}
+
+.warning {
+    color: #ffc857;
+}
+
+.danger {
+    color: #ff6b75;
+}
+
+.success {
+    color: #43d69a;
+}
+
+@media(max-width: 750px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ENEM<span>+</span></div>
+
+    <nav>
+        <button onclick="go('inicio')">Início</button>
+        <button onclick="go('estrategias')">Estratégias</button>
+        <button onclick="go('matematica')">Matemática</button>
+        <button onclick="go('treino')">Treino</button>
+        <button onclick="go('tempo')">Tempo</button>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="inicio">
+
+    <div class="hero-text">
+
+        <div class="badge">TREINAMENTO PARA PROVAS</div>
+
+        <h1>
+            Não é só saber.<br>
+            É saber <span>resolver.</span>
+        </h1>
+
+        <p>
+            Estratégias práticas para ganhar tempo, eliminar alternativas,
+            estimar resultados e tomar decisões melhores durante o ENEM.
+        </p>
+
+        <button class="btn" onclick="go('estrategias')">
+            Começar treinamento →
+        </button>
+
+    </div>
+
+    <div class="hero-card">
+
+        <h3>Seu treinamento</h3>
+
+        <p style="color:#8d98b2">
+            Estratégias concluídas
+        </p>
+
+        <div class="progress">
+            <div></div>
+        </div>
+
+        <strong>72% concluído</strong>
+
+        <br><br>
+
+        <p style="color:#8d98b2">
+            Próximo módulo
+        </p>
+
+        <strong>Chute consciente 🎯</strong>
+
+    </div>
+
+</div>
+
+
+<!-- ESTRATÉGIAS -->
+
+<section id="estrategias">
+
+    <div class="section-title">
+        <h2>🧠 Estratégias de prova</h2>
+        <p>Aprenda a pensar quando a resolução não é óbvia.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Chute consciente</h3>
+            <p>
+                Chutar não significa escolher aleatoriamente.
+                Elimine alternativas usando unidades, estimativas,
+                valores extremos e coerência.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⏱️</div>
+            <h3>Quando pular</h3>
+            <p>
+                Se uma questão está consumindo tempo demais,
+                marque mentalmente e siga para as questões que
+                você consegue resolver.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>Questões longas</h3>
+            <p>
+                Primeiro identifique o comando da questão.
+                Depois procure apenas os dados necessários.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚨</div>
+            <h3>Pegadinhas</h3>
+            <p>
+                Procure unidades incompatíveis, sinais trocados,
+                conversões esquecidas e resultados absurdos.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔍</div>
+            <h3>Eliminar alternativas</h3>
+            <p>
+                Mesmo sem saber resolver completamente,
+                você pode reduzir as possibilidades.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Estimativa</h3>
+            <p>
+                Nem sempre é necessário calcular exatamente.
+                Aproximar pode ser suficiente para encontrar a resposta.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- O QUE FAZER QUANDO NÃO SABE -->
+
+<section>
+
+    <div class="section-title">
+        <h2>🤔 “O que fazer quando eu não sei?”</h2>
+        <p>Um método simples para evitar travar na questão.</p>
+    </div>
+
+    <div class="flow">
+
+        <div class="step">
+            <strong>1. O que a questão pede?</strong>
+            <p class="tip">Identifique exatamente qual é o resultado solicitado.</p>
+        </div>
+
+        <div class="step">
+            <strong>2. Quais dados você possui?</strong>
+            <p class="tip">Separe números, unidades, informações e condições.</p>
+        </div>
+
+        <div class="step">
+            <strong>3. Qual conteúdo está envolvido?</strong>
+            <p class="tip">Porcentagem? Geometria? Física? Estatística?</p>
+        </div>
+
+        <div class="step">
+            <strong>4. Dá para eliminar alternativas?</strong>
+            <p class="tip">Elimine resultados impossíveis ou incoerentes.</p>
+        </div>
+
+        <div class="step">
+            <strong>5. Dá para estimar?</strong>
+            <p class="tip">Compare os valores e procure uma ordem de grandeza.</p>
+        </div>
+
+        <div class="step">
+            <strong>6. Ainda não sabe?</strong>
+            <p class="tip">
+                <span class="warning">Pule e volte depois.</span>
+                Não entregue cinco minutos por uma questão.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MATEMÁTICA -->
+
+<section id="matematica">
+
+    <div class="section-title">
+        <h2>📐 Matemática rápida</h2>
+        <p>Atalhos que economizam tempo durante a prova.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">%</div>
+
+            <h3>Porcentagem de 10%</h3>
+
+            <div class="formula">
+                10% = ÷ 10
+            </div>
+
+            <div class="example">
+                <strong>10% de 340 = 34</strong><br>
+                <strong>10% de 57 = 5,7</strong>
+            </div>
+
+            <p class="tip">
+                20% = dobro de 10%<br>
+                5% = metade de 10%<br>
+                15% = 10% + 5%<br>
+                25% = 1/4<br>
+                50% = metade
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">✖️</div>
+
+            <h3>Multiplicação rápida</h3>
+
+            <div class="formula">
+                98 × 25
+            </div>
+
+            <div class="example">
+                98 × 25<br>
+                ↓<br>
+                49 × 50<br>
+                ↓<br>
+                <strong>2450</strong>
+            </div>
+
+            <p class="tip">
+                Divida um número por 2 e multiplique o outro por 2.
+                O resultado permanece igual.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📏</div>
+
+            <h3>Unidades como pista</h3>
+
+            <p class="tip">
+                Observe as unidades:
+            </p>
+
+            <div class="formula">
+                km/h · m/s · kg · L · J · W · mol
+            </div>
+
+            <p class="tip">
+                Elas podem indicar qual tipo de cálculo ou conversão
+                a questão exige.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📐</div>
+
+            <h3>Conversão</h3>
+
+            <div class="formula">
+                km → hm → dam → m → dm → cm → mm
+            </div>
+
+            <p class="tip">
+                Em comprimento, cada passo muda por 10.
+                Em área, por 100.
+                Em volume, por 1000.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FÓRMULAS -->
+
+<section>
+
+    <div class="section-title">
+        <h2>🧮 Fórmulas essenciais</h2>
+        <p>Algumas fórmulas que vale reconhecer rapidamente.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Velocidade média</h3>
+            <div class="formula">Vm = ΔS / Δt</div>
+            <p>Relaciona distância percorrida e tempo.</p>
+        </div>
+
+        <div class="card">
+            <h3>2ª Lei de Newton</h3>
+            <div class="formula">F = m · a</div>
+            <p>Relaciona força, massa e aceleração.</p>
+        </div>
+
+        <div class="card">
+            <h3>Energia cinética</h3>
+            <div class="formula">Ec = m · v² / 2</div>
+            <p>Energia associada ao movimento.</p>
+        </div>
+
+        <div class="card">
+            <h3>Lei de Ohm</h3>
+            <div class="formula">U = R · i</div>
+            <p>Relaciona tensão, resistência e corrente.</p>
+        </div>
+
+        <div class="card">
+            <h3>Área do círculo</h3>
+            <div class="formula">A = πr²</div>
+            <p>Calcula a área de um círculo.</p>
+        </div>
+
+        <div class="card">
+            <h3>Pitágoras</h3>
+            <div class="formula">a² = b² + c²</div>
+            <p>Usado em triângulos retângulos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Densidade</h3>
+            <div class="formula">d = m / V</div>
+            <p>Relaciona massa e volume.</p>
+        </div>
+
+        <div class="card">
+            <h3>Bhaskara</h3>
+            <div class="formula">
+                x = (-b ± √Δ) / 2a
+            </div>
+            <p>Encontra as raízes de uma equação do 2º grau.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRI -->
+
+<section>
+
+    <div class="section-title">
+        <h2>🎯 Estratégia para Matemática do ENEM</h2>
+        <p>Organize sua prova pela dificuldade.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3 class="success">Prioridade máxima</h3>
+
+            <p class="tip">
+                ✓ Gráficos e tabelas<br>
+                ✓ Razão e proporção<br>
+                ✓ Regra de três<br>
+                ✓ Porcentagem<br>
+                ✓ Estatística básica<br>
+                ✓ Geometria básica<br>
+                ✓ Conversão de unidades<br>
+                ✓ Escalas
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3 class="warning">Prioridade secundária</h3>
+
+            <p class="tip">
+                • Trigonometria<br>
+                • Funções exponenciais<br>
+                • Logaritmos<br>
+                • Geometria analítica<br>
+                • Análise combinatória<br>
+                • Probabilidade mais complexa
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="example" style="max-width:800px;margin:30px auto 0;">
+        <strong>Regra prática:</strong>
+        não fique preso em uma questão difícil enquanto existem
+        questões fáceis esperando para serem resolvidas.
+    </div>
+
+</section>
+
+
+<!-- TREINO -->
+
+<section id="treino">
+
+    <div class="section-title">
+        <h2>🎮 Treinamento de decisão</h2>
+        <p>Teste sua capacidade de decidir sob pressão.</p>
+    </div>
+
+    <div class="quiz-box">
+
+        <div class="question">
+            Você está no meio da prova.
+            Restam <strong>35 minutos</strong>.
+            Você encontrou uma questão difícil que provavelmente
+            levará 5 minutos para resolver.
+            O que fazer?
+        </div>
+
+        <div class="options">
+
+            <button class="option" onclick="answer(this,false)">
+                A) Gastar os 5 minutos tentando resolver.
+            </button>
+
+            <button class="option" onclick="answer(this,true)">
+                B) Marcar para voltar depois e procurar questões mais rápidas.
+            </button>
+
+            <button class="option" onclick="answer(this,false)">
+                C) Ficar analisando até ter certeza absoluta.
+            </button>
+
+            <button class="option" onclick="answer(this,false)">
+                D) Abandonar o restante da prova.
+            </button>
+
+        </div>
+
+        <div id="quizResult" class="result"></div>
+
+    </div>
+
+</section>
+
+
+<!-- CHUTE -->
+
+<section>
+
+    <div class="section-title">
+        <h2>🎯 Chute consciente</h2>
+        <p>Quando você não sabe, ainda pode usar informação.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>1. Elimine</h3>
+            <p class="tip">
+                Retire alternativas incompatíveis com o enunciado,
+                unidades ou contexto.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>2. Estime</h3>
+            <p class="tip">
+                Descubra aproximadamente qual deveria ser o tamanho
+                do resultado.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>3. Procure coerência</h3>
+            <p class="tip">
+                Pergunte: esse resultado faz sentido diante dos dados?
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>4. Valores extremos</h3>
+            <p class="tip">
+                Se o resultado esperado é pequeno, uma alternativa
+                gigantesca provavelmente está errada.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEMPO -->
+
+<section id="tempo">
+
+    <div class="section-title">
+        <h2>⏱️ Controle do tempo</h2>
+        <p>Treine sua tomada de decisão contra o relógio.</p>
+    </div>
+
+    <div class="timer-box">
+
+        <p>Tempo restante</p>
+
+        <div class="timer" id="timer">
+            35:00
+        </div>
+
+        <div class="timer-buttons">
+
+            <button class="btn" onclick="startTimer()">
+                Iniciar
+            </button>
+
+            <button class="btn" onclick="pauseTimer()">
+                Pausar
+            </button>
+
+            <button class="btn" onclick="resetTimer()">
+                Reiniciar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ERROS -->
+
+<section>
+
+    <div class="section-title">
+        <h2>🚨 Evite erros bobos</h2>
+        <p>Às vezes o problema não é não saber. É executar mal.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>📏 Confira unidades</h3>
+            <p>m, cm, km, L, mL, kg e g podem mudar completamente o resultado.</p>
+        </div>
+
+        <div class="card">
+            <h3>➕ Confira sinais</h3>
+            <p>Um sinal negativo perdido pode destruir toda a conta.</p>
+        </div>
+
+        <div class="card">
+            <h3>👀 Leia o comando</h3>
+            <p>Veja se a questão pede valor, porcentagem, diferença, média ou outra grandeza.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔄 Revise</h3>
+            <p>Se sobrar tempo, confira principalmente as questões que você resolveu rapidamente.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <strong>ENEM+</strong>
+    <br><br>
+    Estratégia • Matemática • Decisão • Tempo
+    <br><br>
+    Projeto educacional
+
+</footer>
+
+
+<script>
+
+/* NAVEGAÇÃO */
+
+function go(id) {
+
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* QUIZ */
+
+let score = 0;
+
+function answer(button, correct) {
+
+    const buttons = document.querySelectorAll(".option");
+
+    buttons.forEach(b => {
+        b.disabled = true;
+    });
+
+    const result = document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+    if (correct) {
+
+        button.classList.add("correct");
+
+        score++;
+
+        result.style.background = "#143d2d";
+
+        result.innerHTML =
+        "✅ <strong>Boa.</strong> A melhor estratégia é seguir para as questões que você consegue resolver e voltar depois. Tempo de prova é recurso.";
+
+    } else {
+
+        button.classList.add("wrong");
+
+        result.style.background = "#421f25";
+
+        result.innerHTML =
+        "❌ Essa decisão pode custar tempo demais. Em uma prova longa, ficar preso em uma questão difícil pode fazer você perder várias questões mais acessíveis.";
+
+    }
+
+}
+
+
+/* CRONÔMETRO */
+
+let time = 35 * 60;
+let interval = null;
+
+function updateTimer() {
+
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    minutes = String(minutes).padStart(2, "0");
+    seconds = String(seconds).padStart(2, "0");
+
+    document.getElementById("timer").textContent =
+        minutes + ":" + seconds;
+
+    if (time <= 0) {
+
+        clearInterval(interval);
+
+        document.getElementById("timer").textContent = "00:00";
+
+        alert("⏰ Tempo encerrado!");
+
+    }
+
+}
+
+
+function startTimer() {
+
+    if (interval !== null) return;
+
+    interval = setInterval(() => {
+
+        if (time > 0) {
+
+            time--;
+
+            updateTimer();
+
+        } else {
+
+            clearInterval(interval);
+
+            interval = null;
+
+        }
+
+    }, 1000);
+
+}
+
+
+function pauseTimer() {
+
+    clearInterval(interval);
+
+    interval = null;
+
+}
+
+
+function resetTimer() {
+
+    clearInterval(interval);
+
+    interval = null;
+
+    time = 35 * 60;
+
+    updateTimer();
+
+}
+
+
+updateTimer();
+
+</script>
+
+</body>
+</html>
